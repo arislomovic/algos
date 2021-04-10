@@ -61,16 +61,15 @@ fun buildListNodes(vararg i: Int): ListNode {
     return node
 }
 
-fun bfs(row: Int, col: Int, checkSafe: (row: Int, col: Int) -> Boolean): Int {
-    val directions = intArrayOf(0, 1, 0, -1, 0)
+inline fun bfs(row: Int, col: Int, checkSafe: (row: Int, col: Int) -> Boolean): Int {
     var counter = 0
     val queue: ArrayDeque<Pair<Int, Int>> = arrayDequeOf(row to col)
     while (queue.isNotEmpty()) {
         val point = queue.removeFirst()
         counter++
         repeat(4) { moveIndex ->
-            val nextX = point.first + directions[moveIndex]
-            val nextY = point.second + directions[moveIndex + 1]
+            val nextX = point.first + DIRECTIONS[moveIndex]
+            val nextY = point.second + DIRECTIONS[moveIndex + 1]
             if (checkSafe.invoke(nextX, nextY)) queue.addLast(nextX to nextY)
         }
     }
@@ -93,3 +92,8 @@ fun String.countIndexed(check: (item: Char, index: Int) -> Boolean): Int {
 
 fun Int.squared() = this * this
 
+private fun <T> String.list(delimiter: String, perform: String.() -> T): List<T> =
+    removeSurrounding("[[", "]]").split(delimiter).map { it.perform() }
+
+fun String.toIntArray() = list(",") { toInt() }.toIntArray()
+fun String.toIntArrayArray() = list("],[") { toIntArray() }.toTypedArray()

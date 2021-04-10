@@ -8,16 +8,20 @@ object TwoSums : Problem.Easy(1) {
         return intArrayOf()
     }
 
-    private fun twoSumSortedArr(nums: IntArray = intArrayOf(2, 7, 11, 15), target: Int = 9): IntArray {
+    fun twoSumSortedArr(nums: IntArray = intArrayOf(2, 7, 11, 15), target: Int = 9): List<Pair<Int, Int>> {
         var end = nums.size - 1
         var start = 0
+        val list = ArrayList<Pair<Int, Int>>()
         while (end >= start) {
             val sum = nums[start] + nums[end]
-            if (sum == target) return intArrayOf(nums[start], nums[end])
-            if (sum > target) end--
-            else start++
+            when {
+                start == end -> start++
+                sum == target -> list.add(nums[start++] to nums[end--])
+                sum > target -> end--
+                else -> start++
+            }
         }
-        return intArrayOf()
+        return list
     }
 
     override fun runProblem() = twoSum(mainTestcase.first, mainTestcase.second).toList()

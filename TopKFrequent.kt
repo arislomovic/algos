@@ -1,15 +1,16 @@
 import java.util.*
+import kotlin.collections.HashMap
 
 object TopKFrequent : Problem.Medium(347) {
 
     private fun topKFrequent(nums: IntArray, k: Int) = nums
-        .countOccurrences()
+        .countOccurrences(HashMap())
         .entries
         .sortedWith { o1, o2 -> o2.value - o1.value }
         .run { IntArray(minOf(k, size)) { this[it].key } }
 
     private fun topKFrequentQueue(nums: IntArray, k: Int) = nums
-        .countOccurrences()
+        .countOccurrences(HashMap())
         .run {
             val deque = PriorityQueue(comparator)
             for (i in this) {

@@ -10,8 +10,7 @@ object BinaryTreeTraversal : Problem.Easy() {
         while (stack.isNotEmpty()) {
             val current = stack.removeLast()
             list.add(current.`val`)
-            if (current.right != null) stack.addFirst(current.right!!)
-            if (current.left != null) stack.addFirst(current.left!!)
+            current.addToQueue(stack)
         }
         return list
     }
@@ -20,7 +19,6 @@ object BinaryTreeTraversal : Problem.Easy() {
         root ?: return listOf()
         val list = ArrayList<Int>()
         val stack: ArrayDeque<TreeNode> = arrayDequeOf(root)
-        stack.addFirst(root)
         var current = root
         while (stack.isNotEmpty() || current != null) {
             while (current != null) {

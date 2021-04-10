@@ -1,4 +1,4 @@
-object LevelOrder : Problem.Easy() {
+object LevelOrder : Problem.Medium(102) {
     override fun runProblem() = buildString {
         levelOrder(testCases[0]).let { i -> i.forEach { append(it.getString()) } }
     }

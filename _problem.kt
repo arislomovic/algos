@@ -6,7 +6,7 @@ sealed class Problem private constructor(val id: Int = 0) {
     open class Easy(id: Int = 0) : Problem(id)
     open class Medium(id: Int = 0) : Problem(id)
     open class Hard(id: Int = 0) : Problem(id)
-    open class Misc() : Problem()
+    open class Misc : Problem()
 
     protected val comparator = Comparator<Int> { o1, o2 -> o1 - o2 }
     fun nextInt() = Random.nextInt()
@@ -23,7 +23,7 @@ sealed class Problem private constructor(val id: Int = 0) {
         }
     }
 
-    protected companion object {
+    companion object {
         val DIRECTIONS = intArrayOf(0, 1, 0, -1, 0)
         val ALL_DIRECTIONS = arrayOf(0, 1, -1)
     }

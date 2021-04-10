@@ -48,6 +48,9 @@ fun Array<CharArray>.bfs(): Pair<Int, Int> {
     return counter to size
 }
 
+fun Array<CharArray>.intArrayBFS() = Array(size) { arr -> this[arr].toIntArray() }.bfs()
+
+
 fun Array<IntArray>.bfs(): Pair<Int, Int> {
     var counter = 0
     var maxSize = 0

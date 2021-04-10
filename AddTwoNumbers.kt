@@ -1,5 +1,5 @@
 object AddTwoNumbers : Problem.Medium(2) {
-    override fun runProblem() = addTwoNumbers()?.collect()?.toString().orEmpty()
+    override fun runProblem() = addTwoNumbers(mainTestcase.first, mainTestcase.second)?.collect()?.toString().orEmpty()
 
     private fun addTwoNumbers(l1: ListNode? = testCases[4].first, l2: ListNode? = testCases[4].second): ListNode? {
         var previousSum = 0
@@ -21,7 +21,7 @@ object AddTwoNumbers : Problem.Medium(2) {
         return finalNode
     }
 
-
+    override val mainTestcase get() = testCases[0]
     override fun runTestCases() =
         testCases.map { addTwoNumbers(it.first, it.second) }.map { it?.collect().orEmpty().getString() }.print()
 

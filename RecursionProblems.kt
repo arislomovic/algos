@@ -25,13 +25,6 @@ object RecursionProblems : Problem.Easy() {
                 && isSymmetric(root.left, compared.right)
                 && isSymmetric(root.right, compared.left)
 
-    private fun hasPathSum(root: TreeNode?, sum: Int): Boolean = when {
-        root == null -> false
-        root.left ?: root.right == null -> root.`val` == sum
-        else -> hasPathSum(root.left, sum - root.`val`) || hasPathSum(root.right, sum - root.`val`)
-    }
-
-
     var count = 0
     private fun isUniVal(node: TreeNode?, `val`: Int): Boolean {
         node ?: return true

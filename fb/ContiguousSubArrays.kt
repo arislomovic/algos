@@ -2,7 +2,7 @@ package fb
 
 import arrayDequeOf
 
-object ContiguousSubArrays {
+object ContiguousSubArrays:Problem.Misc() {
     fun countSubarrays(arr: IntArray): IntArray {
         val n = arr.size
         val output = IntArray(n) { 1 }

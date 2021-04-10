@@ -1,5 +1,4 @@
 import java.util.AbstractMap
-import kotlin.math.abs
 
 fun IntArray.swap(i: Int, j: Int) {
     if (i == j) return
@@ -11,9 +10,8 @@ fun IntArray.swap(i: Int, j: Int) {
 fun IntArray.sortInPlace() = apply { sort() }
 fun IntArray.distanceTo(p2: IntArray): Int = distanceTo(p2[0], p2[1])
 fun IntArray.distanceTo(x: Int, y: Int) = (y - this[1]).squared() + (x - this[0]).squared()
-fun IntArray.countOccurrences(map: AbstractMap<Int, Int> = HashMap<Int, Int>()) =
+fun <T : AbstractMap<Int, Int>> IntArray.countOccurrences(map: T) =
     map.also { for (i in this) it[i] = it.getOrDefault(i, 0) + 1 }
-
 fun IntArray.binSearch(target: Int): Boolean {
     var low = 0
     var high: Int = size

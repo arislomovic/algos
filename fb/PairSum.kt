@@ -1,7 +1,5 @@
 package fb
 
-import countOccurrences
-
 object PairSum : Problem.Misc() {
     private fun getPairsCount(arr: IntArray, sum: Int): Int {
         val hm = HashMap<Int, Int>()

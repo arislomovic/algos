@@ -22,6 +22,18 @@ class RandomNode(v: Int, next: RandomNode? = null, var random: RandomNode?) : Ba
 
 class TreeNode(v: Int, var left: TreeNode? = null, var right: TreeNode? = null) : BaseNode(v) {
     override fun collect(): List<Int> = left?.collect().orEmpty() + listOf(`val`) + right?.collect().orEmpty()
+    fun bstSearch(key: Int): TreeNode? {
+        val stack = arrayDequeOf(this)
+        while (stack.isNotEmpty()) {
+            stack.removeLast().let { if (it.`val` == key) return it else it.addToQueue(stack) }
+        }
+        return null
+    }
+
+    fun addToQueue(q: ArrayDeque<TreeNode>) {
+        left?.run { q.addFirst(this) }
+        right?.run { q.addFirst(this) }
+    }
 }
 
 class Robot(private val arr: Array<IntArray>, private var position: Pair<Int, Int>) {

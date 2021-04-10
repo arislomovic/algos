@@ -1,4 +1,3 @@
-fun main(){
-//    problems.runAll()
-    MoveZeroes.runTestCases().print()
+fun main() {
+    problems.runAll()
 }

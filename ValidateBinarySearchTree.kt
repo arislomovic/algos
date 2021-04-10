@@ -25,30 +25,22 @@ object ValidateBinarySearchTree : Problem.Medium(98) {
     }
 
     private fun isValidBSTIteratively(root: TreeNode?): Boolean {
-        val nodes: ArrayDeque<TreeNode?> = arrayDequeOf(root ?: return true)
-        val highs: ArrayDeque<Int?> = arrayDequeOf(null)
-        val lows: ArrayDeque<Int?> = arrayDequeOf(null)
-        fun addToStacks(node: TreeNode?, high: Int?, low: Int?) {
-            nodes.addLast(node)
-            lows.addLast(low)
-            highs.addLast(high)
-        }
-        while (nodes.isNotEmpty()) {
-            val current = nodes.removeFirst() ?: continue
-            val low = lows.removeFirst()
-            val high = highs.removeFirst()
-            if (low != null && low >= current.`val`) return false
-            if (high != null && high <= current.`val`) return false
-            addToStacks(current.right, high, current.`val`)
-            addToStacks(current.left, current.`val`, low)
+        val stack: ArrayDeque<Triple<TreeNode?, Int?, Int?>> = arrayDequeOf(Triple(root ?: return true, null, null))
+        while (stack.isNotEmpty()) {
+            val currentTriple = stack.removeLast()
+            val current = currentTriple.first ?: continue
+            val low = currentTriple.third?.also { if (it >= current.`val`) return false }
+            val high = currentTriple.second?.also { if (it <= current.`val`) return false }
+            stack.addFirst(Triple(current.right, high, current.`val`))
+            stack.addFirst(Triple(current.left, current.`val`, low))
         }
         return true
     }
 
     private fun isValidBST(root: TreeNode?, upper: Int? = null, lower: Int? = null): Boolean =
-            if (root == null) true
-            else if (upper != null && root.`val` >= upper || lower != null && root.`val` <= lower) false
-            else isValidBST(root.left, root.`val`, lower) && isValidBST(root.right, upper, root.`val`)
+        if (root == null) true
+        else if (upper != null && root.`val` >= upper || lower != null && root.`val` <= lower) false
+        else isValidBST(root.left, root.`val`, lower) && isValidBST(root.right, upper, root.`val`)
 
     override fun runProblem() = isValidBST(buildTreeFromArray(1, 2, 6, 3, 5, 1))
 }

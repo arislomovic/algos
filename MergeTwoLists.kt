@@ -7,7 +7,7 @@ object MergeTwoLists : Problem.Medium() {
     }
 
 
-    private fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
+    fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
         // maintain an unchanging reference to node ahead of the return node.
         var newL1: ListNode? = l1 ?: return l2
         var newL2: ListNode? = l2 ?: return l1
