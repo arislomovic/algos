@@ -1,4 +1,4 @@
-object CloneGraph : Problem.Easy() {
+object CloneGraph : Problem.Medium(133) {
 
     override fun runProblem() = cloneGraph(Node(3, neighbors = arrayListOf(Node(2))))?.toString().orEmpty()
     private val map = HashMap<Int, Node>()

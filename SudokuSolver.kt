@@ -1,4 +1,4 @@
-object SudokuSolver : Problem.Medium() {
+object SudokuSolver : Problem.Medium(37) {
 
     override fun runProblem() = with(sudokuBoard) {
         solveSudoku(this)

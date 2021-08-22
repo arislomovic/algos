@@ -1,7 +1,6 @@
 import Problem.Companion.DIRECTIONS
 import java.util.*
 import kotlin.collections.ArrayDeque
-import kotlin.collections.HashMap
 
 fun <T> T.print() = apply { getStringAndPrint() }
 

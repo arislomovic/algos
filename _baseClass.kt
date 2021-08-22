@@ -1,5 +1,3 @@
-import java.lang.Exception
-
 open class BaseNode(val `val`: Int) {
     open fun collect(): List<Int> = listOf()
     override fun toString() = collect().toString()
@@ -59,6 +57,10 @@ class Master(private val secret: String, val words: Array<String>, private var g
         if (!words.contains(s)) return -1
         return s.countIndexed { item, index -> item == secret[index] }
     }
+}
+
+open class VersionControl {
+    fun isBadVersion(version: Int): Boolean = false
 }
 
 

@@ -1,3 +1,8 @@
+package grind75.easy
+
+import Problem
+import arrayDequeOf
+
 object FloodFill : Problem.Easy(733) {
     private fun floodFill(
             image: Array<IntArray> = testCases[0],

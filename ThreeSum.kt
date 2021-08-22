@@ -1,6 +1,3 @@
-import kotlin.collections.ArrayList
-import kotlin.collections.HashSet
-
 object ThreeSum : Problem.Medium(15) {
 
     private fun threeSum(nums: IntArray): List<List<Int>> {

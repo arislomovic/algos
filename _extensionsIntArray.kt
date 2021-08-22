@@ -1,4 +1,4 @@
-import java.util.AbstractMap
+import java.util.*
 
 fun IntArray.swap(i: Int, j: Int) {
     if (i == j) return

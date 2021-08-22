@@ -1,7 +1,7 @@
 import kotlin.math.abs
 
 
-object PowXN : Problem.Medium() {
+object PowXN : Problem.Medium(50) {
     private fun myPow(x: Double, n: Int) =
         fastPow(x, n.toLong())
 

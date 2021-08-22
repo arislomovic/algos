@@ -1,5 +1,3 @@
-import kotlin.collections.ArrayList
-
 object MedianInDataStream : Problem.Hard(295) {
     class MedianFinder() {
 

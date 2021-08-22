@@ -1,5 +1,3 @@
-import java.lang.StringBuilder
-
 object NumberToWords : Problem.Hard(273) {
 
     override fun runProblem() = numberToWords(1000000)

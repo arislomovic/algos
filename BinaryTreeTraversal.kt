@@ -1,6 +1,6 @@
-object BinaryTreeTraversal : Problem.Easy() {
+object BinaryTreeTraversal : Problem.Easy(94) {
     override fun runProblem() = testCases[0]
-            .run { preorderTraversal(this) + "\n" + inOrderTraversal(this) + "\n" + postOrderTraversal(this) }
+        .run { preorderTraversal(this) + "\n" + inOrderTraversal(this) + "\n" + postOrderTraversal(this) }
 
     override val testCases = BinarySearchTree.testCases
     private fun preorderTraversal(root: TreeNode?): List<Int> {

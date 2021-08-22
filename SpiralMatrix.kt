@@ -1,6 +1,3 @@
-import java.util.ArrayList
-
-
 object SpiralMatrix : Problem.Medium(54) {
     private fun spiralOrder(matrix: Array<IntArray>): List<Int> {
         if (matrix.isEmpty()) return listOf()

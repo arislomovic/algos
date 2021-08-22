@@ -1,4 +1,4 @@
-object TargetSum : Problem.Medium() {
+object TargetSum : Problem.Medium(494) {
     override fun runProblem() = add(intArrayOf(1, 2, 3, 5), 5)
     private fun findTargetSumWays(nums: IntArray, S: Int) = addRecursive(nums, 0, 0, S)
 

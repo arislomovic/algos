@@ -1,4 +1,4 @@
-object PascalsTriangle : Problem.Medium() {
+object PascalsTriangle : Problem.Medium(118) {
     override fun runProblem() = getRowOther().getString()
     private fun getRow(rowIndex: Int = 4): List<Int> {
         val arr = Array<ArrayList<Int>>(rowIndex + 1) { ArrayList(it + 1) }

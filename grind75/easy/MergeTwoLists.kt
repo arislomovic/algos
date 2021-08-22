@@ -1,4 +1,10 @@
-object MergeTwoLists : Problem.Medium(21) {
+package grind75.easy
+
+import ListNode
+import Problem
+import buildListNodes
+
+object MergeTwoLists : Problem.Easy(21) {
     private fun mergeTwoListsRecursively(l1: ListNode? = ListNode(1), l2: ListNode? = ListNode(2)): ListNode? {
         l1 ?: return l2
         l2 ?: return l1

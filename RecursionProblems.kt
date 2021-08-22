@@ -1,4 +1,4 @@
-object RecursionProblems : Problem.Easy() {
+object RecursionProblems : Problem.Easy(0) {
     private fun maxDepth(root: TreeNode?) = maxDepth(root, 0)
     private fun isSymmetricRecursive(root: TreeNode?) = isSymmetric(root, root)
 

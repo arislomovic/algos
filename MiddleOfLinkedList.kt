@@ -1,4 +1,4 @@
-object MinJobDifficulty : Problem.Hard(1335) {
+object MiddleOfLinkedList : Problem.Easy(876) {
     fun minDifficulty(dif: IntArray, d: Int): Int {
         val n = dif.size
         if (n < d) return -1

@@ -1,5 +1,5 @@
 object RobotBounded : Problem.Medium(1041) {
-    private fun isRobotBounded(instructions: String): Boolean {
+    fun isRobotBounded(instructions: String): Boolean {
         var direction = 0
         val map = IntArray(4) { -1 }
         for (i in instructions) {

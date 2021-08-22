@@ -1,12 +1,12 @@
 import kotlin.random.Random
 
 //Separate classes will allow us to filter the problems based on types
-sealed class Problem private constructor(val id: Int = 0) {
+sealed class Problem private constructor(val id: Int) {
 
-    open class Easy(id: Int = 0) : Problem(id)
-    open class Medium(id: Int = 0) : Problem(id)
-    open class Hard(id: Int = 0) : Problem(id)
-    open class Misc : Problem()
+    open class Easy(id: Int) : Problem(id)
+    open class Medium(id: Int) : Problem(id)
+    open class Hard(id: Int) : Problem(id)
+    open class Misc : Problem(0)
 
     protected val comparator = Comparator<Int> { o1, o2 -> o1 - o2 }
     fun nextInt() = Random.nextInt()

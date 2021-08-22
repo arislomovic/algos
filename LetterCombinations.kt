@@ -1,4 +1,4 @@
-object LetterCombinations :  Problem.Medium() {
+object LetterCombinations :  Problem.Medium(17) {
     override fun runProblem() = letterCombinations("23")
     private fun letterCombinations(digits: String) = letterCombinationRecursively(digits, "", arrayListOf(), 0)
 

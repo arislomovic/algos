@@ -1,4 +1,4 @@
-object SameTree : Problem.Easy() {
+object SameTree : Problem.Easy(100) {
     override fun runProblem() = isSameTree()
     fun isSameTree(p: TreeNode? = TreeNode(1), q: TreeNode? = TreeNode(0)): Boolean {
         val stackP = arrayDequeOf(p ?: return q == null)

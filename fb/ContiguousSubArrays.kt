@@ -1,5 +1,6 @@
 package fb
 
+import Problem
 import arrayDequeOf
 
 object ContiguousSubArrays:Problem.Misc() {

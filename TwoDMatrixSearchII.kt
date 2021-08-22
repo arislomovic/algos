@@ -1,4 +1,4 @@
-object TwoDMatrixSearchII : Problem.Medium() {
+object TwoDMatrixSearchII : Problem.Medium(240) {
 
     override fun runProblem() = searchMatrixBinary(array, 8)
 

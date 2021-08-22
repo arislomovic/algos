@@ -1,4 +1,4 @@
-object Fibonacci : Problem.Easy() {
+object Fibonacci : Problem.Easy(509) {
     override fun runProblem() = fib(3)
 
     private fun fib(n: Int): Int {

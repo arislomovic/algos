@@ -1,5 +1,4 @@
 import java.util.*
-import kotlin.collections.HashMap
 
 object TopKFrequent : Problem.Medium(347) {
 
